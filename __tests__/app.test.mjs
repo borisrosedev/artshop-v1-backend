@@ -1,0 +1,17 @@
+import app from '../app.mjs';
+import request from 'supertest';
+import assert from "node:assert"
+
+request(app)
+  .get('/catalina')
+  .expect('Content-Type', /json/)
+  .expect('Content-Length', '28')
+  .expect(200)
+  .end(function(err, res) {
+    assert.equal(res.body.message,"salut catalina");
+    if (err) throw err;
+    console.log("✅ test succeeded")
+  });
+
+// add routes to test
+
