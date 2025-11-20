@@ -13,6 +13,10 @@ npm run dev
 npm run test
 ```
 
+# ejs
+
+[Read the ejs doc](https://ejs.co/#install)
+
 
 # curl --json
 ```plain

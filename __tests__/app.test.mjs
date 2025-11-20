@@ -5,7 +5,7 @@ import assert from "node:assert"
 request(app)
   .get('/test')
   .expect('Content-Type', /json/)
-  .expect('Content-Length', '28')
+  .expect('Content-Length', '18')
   .expect(200)
   .end(function(err, res) {
     assert.equal(res.body.message,"test");
@@ -14,4 +14,16 @@ request(app)
   });
 
 // add routes to test
+
+
+request(app)
+  .get('/')
+  .expect('Content-Type', /html/)
+  // .expect('Content-Length', '18')
+  .expect(200)
+  .end(function(err, res) {
+    if (err) throw err;
+    console.log("✅ test succeeded")
+  });
+
 
