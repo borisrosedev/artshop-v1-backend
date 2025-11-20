@@ -27,6 +27,14 @@ app.get("/catalina", (req, res) => {
   return res.json({ message: "salut catalina" })
 })
 
+app.get('/about', (req, res) => {
+  res.send('about')
+})
+
+app.get('/random.text', (req, res) => {
+  res.send('random.text')
+})
+
 
 
 
