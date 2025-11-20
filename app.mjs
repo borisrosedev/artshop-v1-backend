@@ -12,6 +12,15 @@ const app = express();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json({ limit: '10mb'}))
 
+// GET method route
+app.get('/', (req, res) => {
+  res.send('GET request to the homepage')
+})
+
+// POST method route
+app.post('/', (req, res) => {
+  res.send('POST request to the homepage')
+})
 
 // test route 1
 app.get("/catalina", (req, res) => {
