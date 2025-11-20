@@ -3,12 +3,12 @@ import request from 'supertest';
 import assert from "node:assert"
 
 request(app)
-  .get('/catalina')
+  .get('/test')
   .expect('Content-Type', /json/)
   .expect('Content-Length', '28')
   .expect(200)
   .end(function(err, res) {
-    assert.equal(res.body.message,"salut catalina");
+    assert.equal(res.body.message,"test");
     if (err) throw err;
     console.log("✅ test succeeded")
   });

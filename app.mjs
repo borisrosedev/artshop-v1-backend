@@ -14,8 +14,8 @@ app.use(express.json({ limit: '10mb'}))
 
 
 // test route 1
-app.get("/catalina", (req, res) => {
-  return res.json({ message: "salut catalina" })
+app.get("/test", (req, res) => {
+  return res.json({ message: "test" })
 })
 
 
