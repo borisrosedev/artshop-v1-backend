@@ -1,0 +1,5 @@
+---
+- name: start the app 
+  hosts: all 
+  roles:
+    - backend

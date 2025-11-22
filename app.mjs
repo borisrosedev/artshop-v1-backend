@@ -26,13 +26,13 @@ app.get("/test", (req, res) => {
 // beautify the UI 
 app.get('/', (req, res) => {
   res.render('landing', {
-    message: 'Welcome to the ArtShop API'
+    message: 'Welcome to the ArtShop API.'
   })
 })
 
 app.get('/artworks', async(req, res) => {
     try {
-      const serializedArtworks = await fetch('https://691f19f6bb52a1db22c076fb.mockapi.io/api/v1/artworks')
+      const serializedArtworks = await fetch(process.env.MOCK_API)
       const deserializedArtworks = await serializedArtworks.json()
       return res.json({deserializedArtworks});
     } catch(err){

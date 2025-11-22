@@ -1,0 +1,7 @@
+---
+- name: start server.mjs
+  vars:
+    home: '{{ansible_env.HOME}}/Desktop/artshop-v1-backend'
+  ansible.builtin.shell:
+      cmd: npm run dev
+      chdir: '{{home}}'
