@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>ArtShop API</title>
-    </head>
+    <%- include('partials/head', { pageTitle: pageTitle || 'ArtShop – Home' }) %>
     <body>
-        <h1><%= message %></h1>
+        <%- include('partials/header') %>
+        <main class="hero">
+            <div class="hero-content container">
+                <h1 class="hero-title"><%= message %></h1>
+                <p class="hero-sub">Explore artworks, JSON endpoints & templates.</p>
+                <div class="hero-actions">
+                    <a href="/gallery" class="btn">View Gallery</a>
+                    <a href="/artworks" class="btn btn-secondary">API JSON</a>
+                </div>
+            </div>
+        </main>
+        <section class="features container">
+            <div class="feature-card">
+                <h3>Fast</h3>
+                <p>Express 5 with EJS templates and modern ES modules.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Dynamic</h3>
+                <p>Mock API data rendered server-side for SEO & speed.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Extensible</h3>
+                <p>Ready to layer authentication, search & user profiles.</p>
+            </div>
+        </section>
+        <%- include('partials/footer') %>
+        <script src="/js/app.js" defer></script>
     </body>
 </html>
 

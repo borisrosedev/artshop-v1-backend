@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', { pageTitle: pageTitle || 'ArtShop – Gallery' }) %>
+<body class="page-gallery">
+    <%- include('partials/header') %>
+    <main class="container pad-y">
+        <h1 class="page-title">Gallery</h1>
+        <div class="grid gallery-grid">
+            <% artworks.forEach(art => { %>
+                <article class="card art-card">
+                    <a href="<%= art.url %>" target="_blank" rel="noopener noreferrer" class="card-media-link">
+                        <div class="card-media">
+                            <img src="<%= art.url %>" alt="<%= art.name %>" loading="lazy" />
+                        </div>
+                    </a>
+                    <div class="info">
+                        <h2 class="title"><%= art.name %></h2>
+                        <p class="author">By <%= art.author %></p>
+                        <p class="stats" aria-label="Artwork stats">
+                            <span>❤️ <%= art.likes %></span>
+                            <span>👁️ <%= art.views %></span>
+                            <span>⬇️ <%= art.downloads %></span>
+                        </p>
+                        <div class="tags">
+                            <% art.tags.forEach(tag => { %>
+                                <span class="tag"><%= tag.content %></span>
+                            <% }) %>
+                        </div>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <script src="/js/app.js" defer></script>
+</body>
+</html>

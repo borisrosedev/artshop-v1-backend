@@ -26,7 +26,8 @@ app.get("/test", (req, res) => {
 // beautify the UI 
 app.get('/', (req, res) => {
   res.render('landing', {
-    message: 'Welcome to the ArtShop API'
+    message: 'Welcome to the ArtShop API',
+    pageTitle: 'ArtShop – Home'
   })
 })
 
@@ -40,9 +41,41 @@ app.get('/artworks', async(req, res) => {
     }
 })
 
+app.get('/gallery', async (req, res) => {
+  try {
+    const response = await fetch('https://691f19f6bb52a1db22c076fb.mockapi.io/api/v1/artworks');
+    const artworks = await response.json();
+    res.render('gallery', { artworks, pageTitle: 'ArtShop – Gallery' });
+  } catch (err) {
+    res.status(500).send("Erreur lors du chargement des artworks");
+  }
+});
+
+// POST /artworks
+app.post('/artworks', (req, res) => {
+    const newArtwork = req.body;
+
+    console.log('Received POST body:', newArtwork);
+
+    return res.status(201).json({
+        message: "Artwork created successfully!",
+        artwork: newArtwork
+    });
+});
+
 // POST root
 app.post('/', (req, res) => {
-  res.send('POST request to the homepage')
+  res.send('Got a POST request')
+})
+
+// PUT /user
+app.put('/user', (req, res) => {
+  res.send('Got a PUT request at /user')
+})
+
+// DELETE /user
+app.delete('/user', (req, res) => {
+  res.send('Got a DELETE request at /user')
 })
 
 
