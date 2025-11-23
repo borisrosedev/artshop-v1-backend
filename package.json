@@ -1,0 +1,30 @@
+{
+  "name": "artshop-v1-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch server.mjs",
+    "test": "node ./__tests__/app.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borisrosedev/artshop-v1-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/borisrosedev/artshop-v1-backend/issues"
+  },
+  "homepage": "https://github.com/borisrosedev/artshop-v1-backend#readme",
+  "devDependencies": {
+    "supertest": "^7.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
