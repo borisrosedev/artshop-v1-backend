@@ -3,9 +3,26 @@
     <head>
         <meta charset="utf-8">
         <title>ArtShop API</title>
+        <link 
+            rel="stylesheet" 
+            href="/styles/landing.css"
+        >
+        <script defer src="/js/landing.js"></script>
     </head>
     <body>
-        <h1><%= message %></h1>
+        <header class="app__header">
+            <a href="/">ArtShop</a>
+            <nav class="app-header__nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="landing__main">
+            <button id="landing-button" class="landing__button">JSON</button>
+        </main>
+
     </body>
 </html>
 
